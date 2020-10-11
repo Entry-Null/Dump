@@ -1,5 +1,6 @@
 local IsExploit = true
 local IsPaid = true
+local IsDebug = false
 local function StartDump(vars)
     local decode = table.concat
     if IsExploit == true and IsPaid == true and vars == "true" then
@@ -23,5 +24,6 @@ local function StartDump(vars)
         print("Non Exploit")
     end
 end
+
 
 StartDump(true)
