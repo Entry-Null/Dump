@@ -9,12 +9,12 @@ local function StartDump(vars)
     if IsExploit == true and IsPaid == true and vars == true then
         setreadonly(table, false)
     elseif vars == false then
-        print("The Dump is disabled.")
+        print("The Dump is disabled retard dont disable it")
     end
     table.concat = function(brr)
         print(decode(brr))
-        return decode(brr)
         setclipboard(decode(brr))
+        return decode(brr)
     end
     if IsExploit == true and IsPaid == true and CopyWhenDone == true then
         local LogService = Game:GetService("LogService")
@@ -47,7 +47,3 @@ if CopyWhenDone == false then
 end
 
 StartDump(true)
-
---Debug(true)
-
---//Iron brew
