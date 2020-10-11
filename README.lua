@@ -1,6 +1,6 @@
 # Lua Script Dumper 
-This is intended to stay private this will dump the constrants of iron brew obfuscated scripts.
-Just paste this above the script.
+--//This is intended to stay private this will dump the constrants of iron brew obfuscated scripts.
+--//Just paste this above the script.
 
 
 
