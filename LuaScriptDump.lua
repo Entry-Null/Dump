@@ -1,9 +1,10 @@
 local IsExploit = true
 local IsPaid = true
 local IsDebug = false
+local CopyWhenDone = true
 local function StartDump(vars)
     local decode = table.concat
-    if IsExploit == true and IsPaid == true and vars == "true" then
+    if IsExploit == true and IsPaid == true and vars == true then
         setreadonly(table, false)
     elseif vars == false then
         print("False")
@@ -12,7 +13,7 @@ local function StartDump(vars)
         print(decode(brr))
         return decode(brr)
     end
-    if IsExploit == true and IsPaid == true then
+    if IsExploit == true and IsPaid == true and CopyWhenDone = true then
         local LogService = Game:GetService("LogService")
         local history = LogService:GetLogHistory()
         local concat = {}
