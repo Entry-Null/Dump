@@ -34,6 +34,18 @@ if IsDebug == true then
     end
     setclipboard(table.concat(L_3_, "\n"))
 end
-
-
+local function Debug(Types)
+	if Types == true then
+		print("Debug on")
+		local L_3_ = game.CoreGui.RobloxGui.DeveloperConsole.Interior.WindowContainer.Window.Body.ClientLog.Output
+		local L_4_ = {}
+		for L_5_forvar0, L_6_forvar1 in pairs(L_3_:GetChildren()) do
+			table.insert(L_4_, L_6_forvar1.Text)
+		end
+		setclipboard(table.concat(L_4_))
+	end 
+end
+if IsDebug == true then
+	Debug(true)
+end
 StartDump(true)
