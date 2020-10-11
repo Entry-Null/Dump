@@ -9,7 +9,7 @@ local function StartDump(vars)
     if IsExploit == true and IsPaid == true and vars == true then
         setreadonly(table, false)
     elseif vars == false then
-        print("The Dump is disabled retard dont disable it")
+        print("The Dump is disabled.")
     end
     table.concat = function(brr)
         print(decode(brr))
@@ -27,17 +27,6 @@ local function StartDump(vars)
     elseif IsPaid == false then
         print("Non Exploit")
     end
-end
-if IsDebug == true then
-    local L_1_ = Game:GetService("LogService")
-    local L_2_ = L_1_:GetLogHistory()
-    local L_3_ = {}
-    for L_4_forvar0 = 1, #L_2_ do
-        L_3_[#L_3_ + 1] = L_2_[L_4_forvar0].message
-    end
-    setclipboard(table.concat(L_3_, "\n"))
-elseif IsDebug == false then
-    print("--// Debug Off")
 end
 local function Debug(EnvData)
 	if EnvData == true then
