@@ -1,11 +1,11 @@
-local IsExploit = false
-local IsPaid = false
-local function LuaDumpScript(vars)
+local IsExploit = true
+local IsPaid = true
+local function StartDump(vars)
     local decode = table.concat
-    if IsExploit == true and IsPaid == true and vars == true then
+    if IsExploit == true and IsPaid == true and vars == "true" then
         setreadonly(table, false)
     elseif vars == false then
-        print("You need to set it to true (Dump(true))")
+        print("False")
     end
     table.concat = function(brr)
         print(decode(brr))
@@ -24,4 +24,4 @@ local function LuaDumpScript(vars)
     end
 end
 
-LuaDumpScript(true)
+StartDump(true)
