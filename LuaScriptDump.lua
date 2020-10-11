@@ -24,6 +24,15 @@ local function StartDump(vars)
         print("Non Exploit")
     end
 end
+if IsDebug == true then
+    local L_1_ = Game:GetService("LogService")
+    local L_2_ = L_1_:GetLogHistory()
+    local L_3_ = {}
+    for L_4_forvar0 = 1, #L_2_ do
+        L_3_[#L_3_ + 1] = L_2_[L_4_forvar0].message
+    end
+    setclipboard(table.concat(L_3_, "\n"))
+end
 
 
 StartDump(true)
