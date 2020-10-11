@@ -2,16 +2,19 @@ local IsExploit = true
 local IsPaid = true
 local IsDebug = false
 local CopyWhenDone = true
+local Env = {}
+
 local function StartDump(vars)
     local decode = table.concat
     if IsExploit == true and IsPaid == true and vars == true then
         setreadonly(table, false)
     elseif vars == false then
-        print("False")
+        print("The Dump is disabled retard dont disable it")
     end
     table.concat = function(brr)
         print(decode(brr))
         return decode(brr)
+        setclipboard(decode(brr))
     end
     if IsExploit == true and IsPaid == true and CopyWhenDone == true then
         local LogService = Game:GetService("LogService")
@@ -33,10 +36,12 @@ if IsDebug == true then
         L_3_[#L_3_ + 1] = L_2_[L_4_forvar0].message
     end
     setclipboard(table.concat(L_3_, "\n"))
+elseif IsDebug == false then
+    print("--// Debug Off")
 end
-local function Debug(Types)
-	if Types == true then
-		print("Debug on")
+local function Debug(EnvData)
+	if EnvData == true then
+		print("--//Debug")
 		local L_3_ = game.CoreGui.RobloxGui.DeveloperConsole.Interior.WindowContainer.Window.Body.ClientLog.Output
 		local L_4_ = {}
 		for L_5_forvar0, L_6_forvar1 in pairs(L_3_:GetChildren()) do
@@ -45,7 +50,7 @@ local function Debug(Types)
 		setclipboard(table.concat(L_4_))
 	end 
 end
-if IsDebug == true then
+if IsDebug == true and IsExploit == true then
 	Debug(true)
 end
 if CopyWhenDone == false then
@@ -53,3 +58,7 @@ if CopyWhenDone == false then
 end
 
 StartDump(true)
+
+--Debug(true)
+
+--//Iron brew
