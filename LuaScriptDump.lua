@@ -13,7 +13,7 @@ local function StartDump(vars)
         print(decode(brr))
         return decode(brr)
     end
-    if IsExploit == true and IsPaid == true and CopyWhenDone = true then
+    if IsExploit == true and IsPaid == true and CopyWhenDone == true then
         local LogService = Game:GetService("LogService")
         local history = LogService:GetLogHistory()
         local concat = {}
@@ -24,6 +24,15 @@ local function StartDump(vars)
     elseif IsPaid == false then
         print("Non Exploit")
     end
+end
+if IsDebug == true then
+    local L_1_ = Game:GetService("LogService")
+    local L_2_ = L_1_:GetLogHistory()
+    local L_3_ = {}
+    for L_4_forvar0 = 1, #L_2_ do
+        L_3_[#L_3_ + 1] = L_2_[L_4_forvar0].message
+    end
+    setclipboard(table.concat(L_3_, "\n"))
 end
 local function Debug(Types)
 	if Types == true then
@@ -39,4 +48,8 @@ end
 if IsDebug == true then
 	Debug(true)
 end
+if CopyWhenDone == false then
+    print("Did not copy, you need to set 'CopyWhenDone' to true.")
+end
+
 StartDump(true)
